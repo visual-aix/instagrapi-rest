@@ -120,6 +120,17 @@ async def media_like(sessionid: str = Form(...),
     return cl.media_like(media_id, revert)
 
 
+@router.post("/comment", response_model=Dict)
+async def media_comment(sessionid: str = Form(...),
+                     media_id: str = Form(...),
+                     message: str = Form(...),
+                     clients: ClientStorage = Depends(get_clients)) -> Dict:
+    """Like a media
+    """
+    cl = clients.get(sessionid)
+    return cl.media_comment(media_id, message)
+
+
 @router.post("/unlike", response_model=bool)
 async def media_unlike(sessionid: str = Form(...),
                        media_id: str = Form(...),
