@@ -1,19 +1,27 @@
+Run this command to start the server
+
+```
+python3 -m uvicorn main:app --host 0.0.0.0 --port 8001
+```
+
+---
+
 ## If you are tired of being blocked when receiving data from Instagram, I recommend using our service - [Lamadava SaaS](https://lamadava.com) and [Datalama SaaS](https://datalama.io/)
 
 Features:
 
-* Anonymous getting of user, posts, stories, highlights, followers and following users
-* Anonymous getting an email and phone number, if the user specified them in his business profile
-* Anonymous getting of post, story, album, Reels, IGTV data and the ability to download content
-* Anonymous getting of hashtag and location data, as well as a list of posts for them
-* Anonymous getting of all comments on a post and a list of users who liked it
-* Management of proxy servers, mobile devices, solving captcha and challenge resolver
-* Login by username and password, sessionid and support 2FA
-* Managing messages and threads for Direct and attach files
-* Download and upload a Photo, Video, IGTV, Reels, Albums and Stories
-* Work with Users, Posts, Comments, Insights, Collections, Location and Hashtag
-* Insights by account, posts and stories
-* Like, following, commenting, editing account (Bio) and much more else
+- Anonymous getting of user, posts, stories, highlights, followers and following users
+- Anonymous getting an email and phone number, if the user specified them in his business profile
+- Anonymous getting of post, story, album, Reels, IGTV data and the ability to download content
+- Anonymous getting of hashtag and location data, as well as a list of posts for them
+- Anonymous getting of all comments on a post and a list of users who liked it
+- Management of proxy servers, mobile devices, solving captcha and challenge resolver
+- Login by username and password, sessionid and support 2FA
+- Managing messages and threads for Direct and attach files
+- Download and upload a Photo, Video, IGTV, Reels, Albums and Stories
+- Work with Users, Posts, Comments, Insights, Collections, Location and Hashtag
+- Insights by account, posts and stories
+- Like, following, commenting, editing account (Bio) and much more else
 
 ---
 
@@ -21,7 +29,7 @@ Features:
 
 # RESTful API Service for [instagrapi](https://github.com/adw0rd/instagrapi)
 
-Allows you to use the [Instagram Private API](https://github.com/adw0rd/instagrapi) on any operating system from any programming language (C++, C#, F#, D, [Golang](golang), Erlang, Elixir, Nim, Haskell, Lisp, Closure, Julia, R, Java, Kotlin, Scala, OCaml, JavaScript, Crystal, Ruby, Rust, [Swift](swift), Objective-C, Visual Basic, .NET, Pascal, Perl, Lua, PHP and others) to automate the work of your accounts. 
+Allows you to use the [Instagram Private API](https://github.com/adw0rd/instagrapi) on any operating system from any programming language (C++, C#, F#, D, [Golang](golang), Erlang, Elixir, Nim, Haskell, Lisp, Closure, Julia, R, Java, Kotlin, Scala, OCaml, JavaScript, Crystal, Ruby, Rust, [Swift](swift), Objective-C, Visual Basic, .NET, Pascal, Perl, Lua, PHP and others) to automate the work of your accounts.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 [![Donate](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/adw0rd)
@@ -45,33 +53,39 @@ Allows you to use the [Instagram Private API](https://github.com/adw0rd/instagra
 # Installation
 
 Install ImageMagick library:
+
 ```
 sudo apt install imagemagick
 ```
 
 ...and comment the line with strict security policies of ImageMagick in `/etc/ImageMagick-6/policy.xml`:
+
 ```
 <!--<policy domain="path" rights="none" pattern="@*"/>-->
 ```
 
 Run docker container:
+
 ```
 docker run adw0rd/instagrapi-rest
 ```
 
 Or clone the repository:
+
 ```
 git clone https://github.com/adw0rd/instagrapi-rest.git
 cd instagrapi-rest
 ```
 
 Build your image and run the container:
+
 ```
 docker build -t instagrapi-rest .
 docker run -p 8000:8000 instagrapi-rest
 ```
 
 Or you can use docker-compose:
+
 ```
 docker-compose up -d
 ```
@@ -90,7 +104,6 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 Open in browser [http://localhost:8000/docs](http://localhost:8000/docs) and follow the instructions
 
 ![swagger](https://user-images.githubusercontent.com/546889/126989357-8214aa5c-fe42-4be4-b118-bd3585cd3292.png)
-
 
 Get sessionid:
 

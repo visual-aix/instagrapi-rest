@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 
 from fastapi import APIRouter, Depends, Form
 from instagrapi.types import (
@@ -151,3 +151,13 @@ async def unmute_stories_from_follow(sessionid: str = Form(...),
     """
     cl = clients.get(sessionid)
     return cl.unmute_stories_from_follow(user_id)
+
+
+@router.post("/suggestions", response_model=List[UserShort])
+async def user_suggestions(sessionid: str = Form(...), 
+                         user_id: str = Form(...),
+                         clients: ClientStorage = Depends(get_clients)) -> List[UserShort]:
+    """Get user's follow suggestions
+    """
+    cl = clients.get(sessionid)
+    return cl.fbsearch_suggested_profiles(user_id)
